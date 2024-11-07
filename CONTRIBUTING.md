@@ -33,9 +33,7 @@ Don't forget to setup your IDE with `eslint` and `prettier`.
 ## Tests
 
 - Run overall unit tests locally with `pnpm test:ci`, which will execute available tests across all projects under `apps` directory.
-
 - For configuration changes (e.g., farms and pools data), use `pnpm test:config` to verify consistency with on-chain data.
-
 - For end-to-end testing, use `pnpm e2e:ci` to build the `web` app and run end to end tests under the `e2e` project on top of it.
 
 > **Note:** Unit tests and configuration tests are automatically triggered during pull requests to `develop` or when configuration files are updated. However, running unit tests locally before opening a PR is recommended to catch issues early.
