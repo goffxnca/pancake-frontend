@@ -24,14 +24,21 @@ Don't forget to setup your IDE with `eslint` and `prettier`.
 - **views** contains building blocks for each page. The entry point of a view is used as the root component of each route.
 - **config** contains all the config files and ABIs.
 - **state** contains the redux files for the global state of the app.
-- **context** contains global contexts (separated from the redux store)
+- **contexts** contains global contexts (separated from the redux store)
 - **hooks** contains generic hooks.
 - **utils** contains generic utilities functions.
 - **pages** contains page components for next.js
+- **middlewares** contains functions for intercepting requests, managing user sessions and applying custom routing logic.
 
 ## Tests
 
-Run tests with `pnpm test`.
+- Run overall unit tests locally with `pnpm test:ci`, which will execute available tests across all projects under `apps` directory.
+
+- For configuration changes (e.g., farms and pools data), use `pnpm test:config` to verify consistency with on-chain data.
+
+- For end-to-end testing, use `pnpm e2e:ci` to build the `web` app and run end to end tests under the `e2e` project on top of it.
+
+> **Note:** Unit tests and configuration tests are automatically triggered during pull requests to `develop` or when configuration files are updated. However, running unit tests locally before opening a PR is recommended to catch issues early.
 
 ## Issue reports
 
@@ -72,5 +79,3 @@ Reproducibility rate:
 
 **Expected result:**
 ```
-
-A good bug report shouldn't leave others needing to chase you up for more.
